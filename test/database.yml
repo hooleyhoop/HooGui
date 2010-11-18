@@ -1,0 +1,6 @@
+mysql:
+  adapter: mysql
+  host: localhost
+  database: gui_plugin_test
+  username:
+  password:
