@@ -1,12 +1,26 @@
 # Add your own tasks in files placed in lib/tasks ending in .rake,
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+require 'rubygems'
+require 'rake'
 
-require 'rake/testtask'
+#require 'spec/rake/spectask'
+#require 'spec'
 
-Rake::TestTask.new do |test|
-  test.pattern = 'test/**/*_test.rb'
-  test.libs << 'test'
+#require 'cucumber'
+#require 'rake/testtask'
+
+Spec::Rake::SpecTask.new('spec') do |t|
+  t.spec_files = FileList['spec/**/*.rb']
 end
+
+task :features do
+  sh %{ cucumber features/ }
+end
+
+#Rake::TestTask.new do |test|
+#  test.pattern = 'test/**/*_test.rb'
+#  test.libs << 'test'
+#end
 
 
 begin
@@ -27,3 +41,6 @@ begin
 rescue
   puts "Jeweler or one of its dependencies is not installed."
 end
+
+
+task :default => [:spec, :features]

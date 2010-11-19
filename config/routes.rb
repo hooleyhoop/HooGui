@@ -1,12 +1,15 @@
-Rails.application.routes.draw do |map|
+unless Rails.env.production?
 
-  mount_at = Gui::Engine.config.mount_at
+	Rails.application.routes.draw do |map|
 
-  match mount_at => 'gui/widgets#index'
+	  mount_at = Gui::Engine.config.mount_at
 
-  map.resources :widgets, :only => [ :index, :show ],
-                          :controller => "gui/widgets",
-                          :path_prefix => mount_at,
-                          :name_prefix => "gui_"
+	  match mount_at => 'gui/widgets#index'
 
+	  map.resources :widgets, :only => [ :index, :show ],
+							  :controller => "gui/widgets",
+							  :path_prefix => mount_at,
+							  :name_prefix => "gui_"
+
+	end
 end
