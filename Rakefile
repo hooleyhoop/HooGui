@@ -9,13 +9,13 @@ require 'rake'
 #require 'cucumber'
 #require 'rake/testtask'
 
-Spec::Rake::SpecTask.new('spec') do |t|
-  t.spec_files = FileList['spec/**/*.rb']
-end
+#what?Spec::Rake::SpecTask.new('spec') do |t|
+#what?  t.spec_files = FileList['spec/**/*.rb']
+#what?end
 
-task :features do
-  sh %{ cucumber features/ }
-end
+#what?task :features do
+#what?  sh %{ cucumber features/ }
+#what?end
 
 #Rake::TestTask.new do |test|
 #  test.pattern = 'test/**/*_test.rb'
