@@ -5,17 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gui}
-  s.version = "0.0.1"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Your Name"]
-  s.date = %q{2010-11-18}
+  s.date = %q{2010-12-29}
   s.description = %q{audioboo gui}
   s.email = %q{you@email.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    "app/controllers/features_controller.rb",
     "app/controllers/gui/widgets_controller.rb",
     "app/helpers/application_helper.rb",
     "app/helpers/gui/widgets_helper.rb",
@@ -27,13 +28,16 @@ Gem::Specification.new do |s|
     "lib/acts_as_widget/base.rb",
     "lib/application_helper.rb",
     "lib/engine.rb",
-    "lib/gui.rb"
+    "lib/gui.rb",
+    "lib/rails/railties/tasks.rake"
   ]
   s.homepage = %q{}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{hoo gui engine}
   s.test_files = [
+    "spec/spec_helper.rb",
+    "spec/test_spec.rb",
     "test/test_helper.rb",
     "test/unit/widget_test.rb"
   ]
@@ -43,9 +47,42 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<rails>, ["= 3.0.3"])
+      s.add_runtime_dependency(%q<mongrel>, ["= 1.2.0.pre2"])
+      s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_runtime_dependency(%q<database_cleaner>, [">= 0"])
+      s.add_runtime_dependency(%q<capybara>, [">= 0"])
+      s.add_runtime_dependency(%q<sqlite3-ruby>, [">= 0"])
+      s.add_runtime_dependency(%q<haml>, [">= 0"])
+      s.add_development_dependency(%q<webrat>, ["= 0.7.2"])
+      s.add_development_dependency(%q<annotate-models>, ["= 1.0.4"])
+      s.add_development_dependency(%q<faker>, [">= 0"])
+      s.add_development_dependency(%q<rspec-rails>, [">= 2.2.0"])
     else
+      s.add_dependency(%q<rails>, ["= 3.0.3"])
+      s.add_dependency(%q<mongrel>, ["= 1.2.0.pre2"])
+      s.add_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_dependency(%q<database_cleaner>, [">= 0"])
+      s.add_dependency(%q<capybara>, [">= 0"])
+      s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
+      s.add_dependency(%q<haml>, [">= 0"])
+      s.add_dependency(%q<webrat>, ["= 0.7.2"])
+      s.add_dependency(%q<annotate-models>, ["= 1.0.4"])
+      s.add_dependency(%q<faker>, [">= 0"])
+      s.add_dependency(%q<rspec-rails>, [">= 2.2.0"])
     end
   else
+    s.add_dependency(%q<rails>, ["= 3.0.3"])
+    s.add_dependency(%q<mongrel>, ["= 1.2.0.pre2"])
+    s.add_dependency(%q<jquery-rails>, [">= 0"])
+    s.add_dependency(%q<database_cleaner>, [">= 0"])
+    s.add_dependency(%q<capybara>, [">= 0"])
+    s.add_dependency(%q<sqlite3-ruby>, [">= 0"])
+    s.add_dependency(%q<haml>, [">= 0"])
+    s.add_dependency(%q<webrat>, ["= 0.7.2"])
+    s.add_dependency(%q<annotate-models>, ["= 1.0.4"])
+    s.add_dependency(%q<faker>, [">= 0"])
+    s.add_dependency(%q<rspec-rails>, [">= 2.2.0"])
   end
 end
 
